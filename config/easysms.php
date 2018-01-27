@@ -1,27 +1,25 @@
 <?php
-
 return [
+    // HTTP 请求的超时时间（秒）
     'timeout' => 5.0,
 
-    'default' =>[
-        'strategy' =>rue\EasySms\Strategies\OrderStrategy::class,
+    // 默认发送配置
+    'default' => [
+        // 网关调用策略，默认：顺序调用
+        'strategy' => \Overtrue\EasySms\Strategies\OrderStrategy::class,
 
-        'gateways' =>[
+        // 默认可用的发送网关
+        'gateways' => [
             'yunpian',
         ],
-
     ],
-
+    // 可用的网关配置
     'gateways' => [
-            'errorlog' =>[
-                'file' =>'/tmp/east-sms.log',
-            ],
-
-            'yunpian' =>[
-            'api_key' => env('48f33744d577db4fff0ba9792feb23d8') ,
-            ],
-
+        'errorlog' => [
+            'file' => '/tmp/easy-sms.log',
+        ],
+        'yunpian' => [
+            'api_key' => env('YUNPIAN_API_KEY'),
+        ],
     ],
-
-
 ];
