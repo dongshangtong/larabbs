@@ -40,4 +40,10 @@ return [
         'key'   => env('cg8ibk1EaANmfQf0NDYX'),
     ],
 
+    'weixin' => [
+    'client_id' => env('WEIXIN_KEY'),
+    'client_secret' => env('WEIXIN_SECRET'),
+    'redirect' => env('WEIXIN_REDIRECT_URI'),
+],
+
 ];
